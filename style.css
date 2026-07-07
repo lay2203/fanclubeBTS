@@ -1,0 +1,294 @@
+
+/* 
+   =============================================
+   ESTILO CONSOLIDADO - FUNDAÇÃO ARMY 💜
+   =============================================
+*/
+
+/* Reset e Variáveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --purple-primary: #a388ee;
+    --purple-light: #d1c4e9;
+    --purple-dark: #7c4dff;
+    --soft-pink: #f8bbd0;
+    --white: #ffffff;
+    --text-color: #4a4a4a;
+    --bg-color: #fcfaff;
+    --shadow: 0 10px 30px rgba(163, 136, 238, 0.15);
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--purple-dark);
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(163, 136, 238, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 { font-size: 1.8rem; letter-spacing: 1px; }
+.subtitle { font-size: 0.8rem; color: var(--purple-primary); font-weight: 600; }
+
+nav ul { list-style: none; display: flex; gap: 2rem; }
+nav a { text-decoration: none; color: var(--text-color); font-weight: 700; transition: color 0.3s ease; }
+nav a:hover { color: var(--purple-primary); }
+
+/* Seções e Container */
+.section-padding { padding: 6rem 10%; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    position: relative;
+}
+.section-title::after {
+    content: '💜';
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* Hero Section */
+.hero {
+    height: 85vh;
+    background: linear-gradient(135deg, var(--purple-light) 0%, var(--soft-pink) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    border-radius: 0 0 100px 100px;
+}
+.hero-content h2 { font-size: 3.5rem; margin-bottom: 1.2rem; }
+.hero-content p { font-size: 1.4rem; margin-bottom: 2.5rem; }
+
+/* Botões */
+.btn-primary {
+    background-color: var(--purple-dark);
+    color: white;
+    border: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(124, 77, 255, 0.3);
+}
+.btn-primary:hover { transform: scale(1.05); background-color: var(--purple-primary); }
+
+.btn-small {
+    background-color: var(--purple-primary);
+    color: white;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 30px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn-small:hover { background-color: var(--purple-dark); transform: translateY(-3px); }
+
+/* Sobre */
+.about { background-color: var(--white); text-align: center; }
+.description { max-width: 850px; margin: 0 auto; font-size: 1.3rem; color: #555; }
+
+/* Discografia (Cards Detalhados) */
+.album-card {
+    background: white;
+    border-radius: 35px;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+    transition: transform 0.3s;
+    border: 2px solid transparent;
+}
+.album-card:hover { transform: translateY(-8px); border-color: var(--purple-light); }
+.album-img {
+    width: 250px;
+    min-width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+}
+.album-info h3 { font-size: 2rem; margin-bottom: 0.5rem; }
+.album-meta { color: var(--purple-primary); font-weight: 700; margin-bottom: 1rem; display: block; }
+.tracklist { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.2rem; }
+.tracklist li {
+    background: var(--bg-color);
+    border: 1.5px solid var(--purple-light);
+    border-radius: 25px;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.tracklist li.title-track { background: var(--purple-dark); color: white; border-color: var(--purple-dark); }
+
+/* Momentos (Galeria) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+.photo-card {
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+.photo-card:hover { transform: translateY(-10px); }
+.photo-frame { height: 250px; background-size: cover; background-position: center; position: relative; }
+.photo-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(124, 77, 255, 0.9);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.photo-content { padding: 1.5rem; }
+.photo-content h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.photo-date { font-size: 0.85rem; color: var(--purple-primary); font-weight: 700; display: block; margin-top: 1rem; }
+
+/* Mimos (Loja) */
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+.product-card {
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(163, 136, 238, 0.3); }
+.product-img { height: 220px; background-size: cover; background-position: center; position: relative; }
+/* .product-img::after { content: '🎁'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; opacity: 0.2; } */
+.product-info { padding: 1.5rem; flex: 1; }
+.product-price { padding: 0 1.5rem 1.5rem; }
+.price-tag { font-size: 1.8rem; font-weight: 700; color: var(--purple-dark); display: block; margin-bottom: 1rem; }
+.btn-buy {
+    background: var(--purple-dark);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+.btn-buy:hover { background: var(--purple-primary); }
+
+/* Gradientes de Cores */
+.color-1 { background: linear-gradient(45deg, #a388ee, #f8bbd0); }
+        .img-army-bomb { background-image: url('https://i.postimg.cc/bNcCs3b1/ARMY-BOMB-VER-4.jpg'); }
+        .img-album-proof { background-image: url('https://i.postimg.cc/KjCnTFmr/BTS-Proof-Digital-Cover-(1).jpg'); }
+        .img-momento-debut { background-image: url('https://i.postimg.cc/1X4DjXvd/BTS-(1).jpg'); }
+.color-2 { background: linear-gradient(45deg, #d1c4e9, #a388ee); }
+        .img-photocards { background-image: url('https://i.postimg.cc/P5BPjp01/Mercado-Libre.jpg'); }
+        .img-album-be { background-image: url('https://i.postimg.cc/7Z9nBF92/Be-(Audiobook)-Walmart-com.jpg'); }
+        .img-momento-win { background-image: url('https://i.postimg.cc/NFw510WN/I-Need-You.jpg'); }
+.color-3 { background: linear-gradient(45deg, #7c4dff, #d1c4e9); }
+        .img-moletom { background-image: url('https://i.postimg.cc/VNC0rBXK/Blusa-de-Frio-Moletom-Canguru-BTS-World-Tour-Frente-e-Costa-Datas-Turne-Brasil-2026-KPOP-Army-Bangta.jpg'); }
+        .img-album-mots7 { background-image: url('https://i.postimg.cc/wjjmB757/BTS.jpg'); }
+        .img-momento-grammy { background-image: url('https://i.postimg.cc/s27z5JyN/BTS-Grammy-Performance-2021.jpg'); }
+.color-4 { background: linear-gradient(45deg, #f8bbd0, #7c4dff); }
+
+/* Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+.modal-overlay.active { display: flex; }
+.modal-box {
+    background: white;
+    border-radius: 40px;
+    padding: 3rem;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+    animation: pop 0.3s ease-out;
+}
+@keyframes pop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.modal-box h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+.modal-box p { color: #666; margin-bottom: 2rem; }
+.btn-close {
+    background: var(--purple-dark);
+    color: white;
+    border: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: var(--purple-dark);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .album-card { flex-direction: column; text-align: center; }
+    .album-img { width: 100%; }
+}
+@media (max-width: 768px) {
+    header { flex-direction: column; padding: 1.5rem; }
+    nav ul { margin-top: 1rem; gap: 1rem; font-size: 0.9rem; }
+    .hero-content h2 { font-size: 2.5rem; }
+    .section-padding { padding: 4rem 5%; }
+}
